@@ -1,4 +1,4 @@
-<h1 align='center' style="text-align:center; font-weight:bold; font-size:2.0em;letter-spacing:2.0px;"> Training-Free Guidance Beyond Differentiability: Scalable Path Steering with Tree Search in Diffusion and Flow Models </h1>
+<h1 align='center' style="text-align:center; font-weight:bold; font-size:2.0em;letter-spacing:2.0px;"> Training-Free Guidance Beyond Differentiability:<br>Scalable Path Steering with Tree Search in Diffusion and Flow Models </h1>
 
 <p align='center' style="text-align:center;font-size:1.25em;"> 
     Yingqing Guo*, &nbsp; 
