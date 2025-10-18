@@ -3,7 +3,7 @@
 <p align='center' style="text-align:center;font-size:1.25em;"> 
     Yingqing Guo*, &nbsp; 
     Yukang Yang*, &nbsp; 
-    Hui Yuan*, &nbsp; 
+    <a href="https://hhhhuiyuan.github.io" target="_blank" style="text-decoration: none;">Hui Yuan*</a>, &nbsp; 
     <a href="https://mwang.princeton.edu/" target="_blank" style="text-decoration: none;">Mengdi Wang</a>&nbsp
     <br/>  
 Princeton University (* Equal Contribution)
