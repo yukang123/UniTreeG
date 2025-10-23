@@ -7,6 +7,8 @@
     <a href="https://mwang.princeton.edu/" target="_blank" style="text-decoration: none;">Mengdi Wang</a>&nbsp
     <br/>  
 Princeton University (* Equal Contribution)
+  <br/> <br/> 
+<b>NeurIPS 2025</b>
 </p>
 
 <p align='center' style="text-align:center;font-size:2.5 em;">
@@ -14,3 +16,9 @@ Princeton University (* Equal Contribution)
     <a href="https://arxiv.org/abs/2502.11420" target="_blank" style="text-decoration: none;">arXiv</a>&nbsp;
 </b>
 </p>
+
+
+
+## News
+
+**2025.09.18** Our paper has been accepted by NeurIPS 2025. The code is coming soon!
