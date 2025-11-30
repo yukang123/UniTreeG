@@ -5,7 +5,7 @@ old*
 wandb
 *.npy
 *.out
-
+loggings/
 
 #
 
