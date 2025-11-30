@@ -3,7 +3,6 @@
 This repository contains the codebase for the symbolic music generation task (continuous diffusion with non-differentiable objectives) as presented in the paper: [**Training-Free Guidance Beyond Differentiability: Scalable Path Steering with Tree Search in Diffusion and Flow Models**](https://arxiv.org/abs/2502.11420). 
 
 
---
 
 ## 🛠️ Environment Setup
 
@@ -17,7 +16,6 @@ conda env create -f environment.yml
 conda activate guided
 ```
 
----
 
 ## 💾 Pretrained Checkpoints
 
@@ -28,7 +26,7 @@ Please download the following checkpoints and save them to your local directory:
 * **VAE Checkpoint:** Download from [VAE](https://huggingface.co/yjhuangcd/rule-guided-music/tree/main/trained_models/VAE).
 * **Diffusion Model Checkpoint:** Download from [Diffusion Model](https://huggingface.co/yjhuangcd/rule-guided-music/tree/main/trained_models/diffusion).
 
----
+
 
 ## 🚀 TreeG Generation
 
