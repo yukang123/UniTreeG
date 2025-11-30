@@ -32,7 +32,7 @@ Please download the following checkpoints and save them to your local directory:
 
 Below are the commands to run generation using **TreeG-SD** and **TreeG-SC**.
 
-### Usage Notes
+#### Usage Notes
 
 The examples below target the *Note Density* task. To change the task, update the `--data_dir` and `--config_path` arguments accordingly.
 
