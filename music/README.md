@@ -1,6 +1,6 @@
 # Symbolic Music Generation (TreeG)
 
-This repository contains the codebase for the symbolic music generation task (continuous diffusion with non-differentiable objectives) as presented in the paper: [Training-Free Guidance Beyond Differentiability: Scalable Path Steering with Tree Search in Diffusion and Flow Models](https://arxiv.org/abs/2502.11420). 
+This repository contains the codebase for the symbolic music generation task (continuous diffusion with non-differentiable objectives) as presented in the paper: [**Training-Free Guidance Beyond Differentiability: Scalable Path Steering with Tree Search in Diffusion and Flow Models**](https://arxiv.org/abs/2502.11420). 
 
 
 ---
