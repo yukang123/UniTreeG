@@ -34,13 +34,14 @@ Below are the commands to run generation using **TreeG-SD** and **TreeG-SC**.
 
 ### Usage Notes
 
+The examples below target the *Note Density* task. To change the task, update the `--data_dir` and `--config_path` arguments accordingly.
+
 Before running the scripts, ensure you replace the following placeholders with your actual paths:
 
 * `<diffusion_ckpt_path>`: Path to the downloaded Diffusion Model checkpoint.
 * `<vae_path>`: Path to the downloaded VAE checkpoint.
 * `<save_dir>`: Directory where the generated results will be saved.
 
-**Note:** The examples below target the *Note Density* task. To change the task, update the `--data_dir` and `--config_path` arguments accordingly.
 
 
 ### TreeG-SD
