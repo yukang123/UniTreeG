@@ -49,8 +49,8 @@ Before running the scripts, ensure you replace the following placeholders with y
 
 Hyperparameters (explained in detail in **Appendix F.1** of the paper): 
 
-* `--gs_n_iter`: \(N_{\text{iter}}\).
-* `--gs_pred_xstart_scale`:Scaling factor applied to the step size (\(\rho_t\)).  
+* `--gs_n_iter`: $N_{\text{iter}}$.
+* `--gs_pred_xstart_scale`:Scaling factor applied to the step size ($\rho_t$).  
 
 
 ```bash
@@ -107,8 +107,7 @@ python sample.py \
                                     
 ## 📚 References
 
-This repository extends and modifies  
-[**Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion**](https://github.com/yjhuangcd/rule-guided-music).
+This repository extends and modifies [**Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion**](https://github.com/yjhuangcd/rule-guided-music).
 
 Please consider citing the following paper when using our code:
 
