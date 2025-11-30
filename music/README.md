@@ -21,12 +21,12 @@ conda activate guided
 
 ## 💾 Pretrained Checkpoints
 
-This project utilizes pretrained models from the paper *Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion*.
+This project utilizes pretrained models from the paper [Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion](https://arxiv.org/abs/2402.14285).
 
 Please download the following checkpoints and save them to your local directory:
 
-* **VAE Checkpoint:** Download here
-* **Diffusion Model Checkpoint:** Download here
+* **VAE Checkpoint:** Download from [VAE](https://huggingface.co/yjhuangcd/rule-guided-music/tree/main/trained_models/VAE).
+* **Diffusion Model Checkpoint:** Download from [Diffusion Model](https://huggingface.co/yjhuangcd/rule-guided-music/tree/main/trained_models/diffusion).
 
 ---
 
@@ -42,20 +42,16 @@ Before running the scripts, ensure you replace the following placeholders with y
 * `<vae_path>`: Path to the downloaded VAE checkpoint.
 * `<save_dir>`: Directory where the generated results will be saved.
 
-> **Note:** The examples below target the *Note Density* task. To change the task, update the `--data_dir` and `--config_path` arguments accordingly.
+**Note:** The examples below target the *Note Density* task. To change the task, update the `--data_dir` and `--config_path` arguments accordingly.
 
----
 
-## 1. TreeG-SD (Steepest Descent)
+### TreeG-SD
 
-This method corresponds to the setup described in Appendix F.1 of the paper.
+Hyperparameters (explained in detail in **Appendix F.1** of the paper): 
 
-### Key Parameters
+* `--gs_n_iter`: \(N_{\text{iter}}\).
+* `--gs_pred_xstart_scale`:Scaling factor applied to the step size (\(\rho_t\)).  
 
-* `--gs_n_iter`: Represents (N_{iter}).
-* `--gs_pred_xstart_scale`: Hyperparameter multiplying the stepsize (\rho_t).
-
-### Command
 
 ```bash
 python sample.py \
@@ -83,78 +79,10 @@ python sample.py \
   --vae_path <vae_path>
 ```
 
----
 
-## 2. TreeG-SC (Spatial Clustering)
-
-### Command
+### TreeG-SC
 
 ```bash
-python sample.py \
-  --active_size 2 \
-  --branch_size 8 \
-  --search_type "TreeG-SC" \
-  --timestep_respacing "ddim1000" \
-  --seed 0 \
-  --data_dir data/gen_target/note_density_target.csv \
-  --save_dir <save_dir> \
-  --config_path scripts/configs/nd_treeg_sc.yml \
-  --batch_size 200 \
-  --num_samples 1 \
-  --model DiTRotary_XL_8 \
-  --model_path <diffusion_ckpt_path> \
-  --image_size 128 16 \
-  --in_channels 4 \
-  --scale_factor
-```
-
-
-## Download Pretrained Checkpoints
-this is from paper [Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion](https://arxiv.org/abs/2402.14285). 
-- Download the pretrained [VAE](https://huggingface.co/yjhuangcd/rule-guided-music/tree/main/trained_models/VAE) checkpoint.
-- Download the pretrained [Diffusion Model](https://huggingface.co/yjhuangcd/rule-guided-music/tree/main/trained_models/diffusion).
-
-
-## TreeG Generation
-
-checkpoint path <diffusion_ckpt_path>, <vae_path>, set <save_dir>
-for example, for note density task, set corresponding data_dir and config_path.
-
-
-TreeG-SD: 
-
-```
-python sample.py \
-  --active_size 2 \
-  --branch_size 8 \
-  --search_type "TreeG-SD" \
-  --timestep_respacing "ddim1000" \
-  --gs_n_iter 2 \
-  --gs_pred_xstart_scale 0.5 \
-  --gs_guidance_rate 1 \
-  --seed 0 \
-  --data_dir data/gen_target/note_density_target.csv \
-  --save_dir <save_dir> \
-  --config_path scripts/configs/nd_treeg_sd.yml \
-  --batch_size 200 \
-  --num_samples 1 \
-  --model DiTRotary_XL_8 \
-  --model_path <diffusion_ckpt_path> \
-  --image_size 128 16 \
-  --in_channels 4 \
-  --scale_factor 1.2465 \
-  --class_cond True \
-  --num_classes 3 \
-  --class_label 1 \
-  --vae_path <vae_path>
-```
-
-where refers to Appendix F.1 TreeG-SD Setup section, gs_n_iter is N_iter, gs_pred_xstart_scale is hyperparameter mulitply stepsize ρt.
-
-
-TreeG-SC
-
-```
 python sample.py \
   --active_size 2 \
   --branch_size 8 \
@@ -177,20 +105,12 @@ python sample.py \
   --vae_path <vae_path>
 ```
                                     
+## 📚 References
 
-## References
-This repository is based on 
-- [Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion](https://github.com/yjhuangcd/rule-guided-music).
-- [openai/guided-diffusion](https://github.com/openai/guided-diffusion).
-- The VAE architecture is modified upon [taming-transformers](https://github.com/CompVis/taming-transformers). 
-- The DiT architecture is modified upon [DiT](https://github.com/facebookresearch/DiT).
-- Music evaluation code is adapted from [mgeval](https://github.com/RichardYang40148/mgeval) and [figaro](https://github.com/dvruette/figaro).
-- MIDI to piano roll representation is adapted from [pretty_midi](https://github.com/craffel/pretty-midi).
+This repository extends and modifies  
+[**Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion**](https://github.com/yjhuangcd/rule-guided-music).
 
-
-
-
-Please consider citing the following paper when using our code for your application.
+Please consider citing the following paper when using our code:
 
 ```bibtex
 @article{guo2025training,
@@ -199,4 +119,4 @@ Please consider citing the following paper when using our code for your applicat
   journal={arXiv preprint arXiv:2502.11420},
   year={2025}
 }
-```
+
