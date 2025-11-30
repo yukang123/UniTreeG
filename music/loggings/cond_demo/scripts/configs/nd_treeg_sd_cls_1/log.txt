@@ -1,0 +1,9 @@
+Logging to loggings/cond_demo/scripts/configs/nd_treeg_sd_cls_1
+creating model and diffusion...
+sampling...
+active set size:  2
+branch size:  2
+search method:  TreeG-SD
+guided x start sampling...
+n_iter: 2,pred_xstart_scale: 0.5, guidance_rate: 1.0
+use dsg: True

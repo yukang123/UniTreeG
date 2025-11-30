@@ -40,7 +40,6 @@ import matplotlib.pyplot as plt
 from music_rule_guidance.rule_maps import FUNC_DICT, LOSS_DICT
 from music_rule_guidance.piano_roll_to_chord import IND2KEY
 
-from eval_oa_cluster_single_fn import eval_oa
 
 
 plt.rcParams["figure.figsize"] = (20, 3)
@@ -365,22 +364,7 @@ def main():
         loss_stats.to_csv(os.path.join(save_dir, 'summary.csv'))
         print(loss_stats)
 
-        if args.eval_oa:
-            task_name = model_kwargs["rule"].keys()
-            task_name = list(task_name)[0]
-
-            if 'pitch' in task_name:
-                gt_dir = '/scratch/gpfs/yg6736/rule_music/data/ph/gt'
-            elif 'note' in task_name:
-                gt_dir = '/scratch/gpfs/yg6736/rule_music/data/nd/gt'
-            elif 'chord' in task_name:
-                gt_dir = '/scratch/gpfs/yg6736/rule_music/data/cp/gt'
-
-            oa_mean, oa_std = eval_oa(save_dir, gt_dir, num_clusters=4, savename='cluster_oa')
-            new_row = pd.DataFrame([{'Attr': 'OA', 'Mean': oa_mean, 'Std': oa_std}])
-            loss_stats = pd.concat([loss_stats, new_row], ignore_index=True)
-
-
+   
         
         loss_stats.to_csv(os.path.join(save_dir, 'summary_all.csv'))
         print('Summary:')
@@ -450,7 +434,6 @@ def create_argparser():
         active_size=1,
         branch_size=8,
         search_type=None,
-        eval_oa=False,
         t_start=750,
         interval=1,
         time_path=None,

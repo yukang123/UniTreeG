@@ -9,11 +9,13 @@ This repository contains the codebase for the symbolic music generation task (co
 To get started, create and activate the required Conda environment:
 
 ```bash
+cd music
+
 # Create the environment
 conda env create -f environment.yml
 
 # Activate the environment
-conda activate guided
+conda activate music-env
 ```
 
 
