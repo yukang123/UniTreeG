@@ -51,7 +51,7 @@ We proposed <b>TreeG</b>, a training-free tree-search guidance framework which <
   <tr>
     <td colspan="2" style="border: none;">
       <!-- <h3> -->
-      <b>TreeG Overview.</b> <br><b><i>Left</i></b>: An active set of size <i>A</i> is maintained, where each sample branches into <i>K</i> candidates. At each step, the top <i>A</i> candidates are retained, and the best sample is selected at the final step. <br> <b><i>Right</i></b>: Two implementations of <i>Branch Out</i> operations which do not require a differentiable objective predictor (1) <b>TreeG-SC</b> which samples <i>K</i> candidates at next denosing time step and then evaluates them through a lookahead estimate of corrsponding clean samples. <b>TreeG-SD</b> which applies branching and selection in the
+      <b>TreeG Overview.</b> <br><b><i>Left</i></b>: An active set of size <i>A</i> is maintained, where each sample branches into <i>K</i> candidates. At each step, the top <i>A</i> candidates are retained, and the best sample is selected at the final step. <br> <b><i>Right</i></b>: Two implementations of <i>Branch Out</i> operations which do not require a differentiable objective predictor (1) <b>TreeG-SC</b> which samples <i>K</i> candidates at next denosing time step and then evaluates them through a lookahead estimate of corrsponding clean samples. (2) <b>TreeG-SD</b> which applies branching and selection in the
 destination state space. Additionally, if a differentiable objective predictor is available, gradient-based guidance can be also applied to the current state as a <i>Branch Out</i> operation for proposing candidates at next time steps (<b>TreeG-G</b>).
 <!-- branch-out. -->
       <!-- </h3> -->
