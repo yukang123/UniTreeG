@@ -66,7 +66,7 @@ destination state space. Additionally, if a differentiable objective predictor i
 
 ## News
 
-**2025.09.18** Our paper has been accepted by NeurIPS 2025. The code is coming soon!
+**2025.09.18** Our paper has been accepted by NeurIPS 2025. The code is coming soon! <br>
 **2025.12.02** The code for music generation and small molecule generation is released. 
 
 ## 🎵 Symbolic Music Generation 
