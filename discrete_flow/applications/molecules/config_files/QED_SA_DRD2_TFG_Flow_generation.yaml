@@ -1,0 +1,35 @@
+# Specify general configuration
+state: 'generation'
+device: 'cuda'
+num_gpus: 1
+eps_ratio: 1e-9 # Will be parsed as string!
+base_dir: 'exps'
+
+# Relative path to the train folder (with the model weights etc.) used to load models for generation:
+trained_run_folder_dir: './trained/2025-05-09/no_overrides_unnorm'
+predict_on_x1: True
+
+# Specify the sampler specific configurations
+sampler:
+  noise: 30.0                 # Stochasticity '\eta'
+  x1_temp: 1.0                # Temperature for unconditional model
+  do_purity_sampling: False   # Should we use purity sampling?
+  purity_temp: 1.0            # Temperature for purity sampling (only relevant if do_purity_sampling=True)     
+  argmax_final: True          # Should we use argmaxing in the last generation step?
+  max_t: 0.98                 # Maximal time point during generation
+  dt: 0.001                   # Time step for Euler-method
+  sample_zero_time_pads: True # Should we sample SMILES padding at time zero?
+  grad_approx: False          # Use Taylor-approximated guidance (TAG) or not
+  seed: 30                    # Seed to be used to initialize random states of generation
+  batch_size: 100 #100             # How many samples to draw in parallel
+  max_iterations: 100000      # The maximal number of times the generator is invoked
+
+  guidance_at_x1: True ## guidance at x1
+  guide_temp: 0.5             # Guidance temperature
+  log_Rt_ratio_temp: 1.0 # the temperature for the log(Rt_y) | log(Rt) ratio
+  #### Tunable parameters for the guidance at x1
+  only_sample_for_rt_star: False
+  only_sample_for_unmasking: True
+  sample_k_for_guided_matrix: 2000
+  ##############################################
+  without_guidance: False ## for debugging

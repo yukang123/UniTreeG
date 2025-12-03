@@ -1,0 +1,39 @@
+# Specify general configuration
+state: 'generation'
+device: 'cuda'
+num_gpus: 1
+eps_ratio: 1e-9 # Will be parsed as string!
+base_dir: 'exps'
+
+# Relative path to the train folder (with the model weights etc.) used to load models for generation:
+trained_run_folder_dir: './trained/2025-05-09/no_overrides_unnorm'
+predict_on_x1: True
+
+# Specify the sampler specific configurations
+sampler:
+  noise: 30.0                 # Stochasticity '\eta'
+  x1_temp: 1.0                # Temperature for unconditional model
+  do_purity_sampling: False   # Should we use purity sampling?
+  purity_temp: 1.0            # Temperature for purity sampling (only relevant if do_purity_sampling=True)     
+  argmax_final: True          # Should we use argmaxing in the last generation step?
+  max_t: 0.98                 # Maximal time point during generation
+  dt: 0.001                   # Time step for Euler-method
+  sample_zero_time_pads: True # Should we sample SMILES padding at time zero?
+  seed: 30                    # Seed to be used to initialize random states of generation
+  batch_size: 100 #100             # How many samples to draw in parallel
+  max_iterations: 100000      # The maximal number of times the generator is invoked
+
+
+  guidance_at_x1: False ## guidance at xt
+  guidance_start_step: 0
+  guidance_end_step: -1
+  guide_temp: 0.5             # Guidance temperature [Ablation]
+  #### Tunable parameters for the guidance at xt
+  sample_k_for_prob_xt_estimation: 30 #3 [Ablation]
+  low_threshold: 1.0e-8
+  gumbel_softmax_t: 1.0 #0.1
+
+  grad_approx: True          # Use Taylor-approximated guidance (TAG) or not
+  ##############################################
+  use_grad_fn_v1: False
+  sample_max: False

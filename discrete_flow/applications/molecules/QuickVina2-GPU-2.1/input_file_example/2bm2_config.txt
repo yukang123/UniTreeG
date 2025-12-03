@@ -1,0 +1,11 @@
+receptor = ./input_file_example/2bm2_protein.pdbqt
+ligand_directory = ./test
+output_directory = ./test
+opencl_binary_path = /scratch/gpfs/yy1325/codes/DiscreteGuidance/Unlocking_Guidance/public_repo/discrete_guidance/Vina-GPU-2.1/QuickVina2-GPU-2.1 
+center_x = 40.415
+center_y = 110.986
+center_z = 82.673
+size_x = 30
+size_y = 30
+size_z = 30
+thread = 8000
