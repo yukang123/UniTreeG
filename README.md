@@ -35,15 +35,15 @@ We proposed <b>TreeG</b>, a training-free tree-search guidance framework which <
     <!-- <b>(a)</b> -->
     </td>
     <td style="border: none; width: 30%;">
-      <img width="50%" alt="demo2" src="assets/TreeG-SC.png">
+      <img width="80%" alt="demo2" src="assets/TreeG-SC.png">
     </td>
     <!-- <td style="border: none; width: 20%;">
-      <img width="10%" alt="demo2" src="assets/TreeG-G.png">
+      <img width="100%" alt="demo2" src="assets/TreeG-G.png">
     </td> -->
   </tr>
   <tr>
     <td style="border: none; width: 30%;">
-      <img width="50%" alt="demo3N" src="assets/TreeG-SD.png">
+      <img width="80%" alt="demo3N" src="assets/TreeG-SD.png">
     </td>
     <!-- <br>
     <b>(b)</b> -->
